@@ -58,7 +58,7 @@
                              target:(id)target
                              action:(SEL)aSelect ;
                              
-                             + (UIButton *)createButtonWithTitle:(NSString *)title
+        + (UIButton *)createButtonWithTitle:(NSString *)title
                          titleColor:(UIColor *)titleColor
                       titleFontSize:(CGFloat)fontSize
                              target:(id)target
