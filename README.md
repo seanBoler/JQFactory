@@ -1,5 +1,7 @@
 # JQFactory
 
+`JQFactory.h`
+`JQFactory.m`
 
 - 初始化创建控件
 - 控件常用属性 
