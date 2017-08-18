@@ -6,16 +6,15 @@
 - 初始化创建控件
 - 控件常用属性 
 - 适用控件 
-            
-            1.UIView 
-            2.UILabel 
-            3.UIButton 
-            4.UIBarButtonItem 
-            5.UIAlertController 
-            6.UITextFeild 
-            7.UITextView 
-            8.UITableView 
-            9.UIImageView
+            1. `UIView`
+            2. `UILabel` 
+            3. `UIButton` 
+            4. `UIBarButtonItem` 
+            5. `UIAlertController` 
+            6. `UITextFeild` 
+            7. `UITextView` 
+            8. `UITableView` 
+            9. `UIImageView`
 
 
 ## 不带边框view
