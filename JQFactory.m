@@ -109,21 +109,69 @@
     return label;
 }
 
-#pragma mark - make textField
-+ (UITextField *)createTextFieldWithtextColor:(UIColor *)textColor
++(UITextField *)creatTextFieldWithLeftViewtextColor:(UIColor *)textColor
                                  textFontSize:(CGFloat)fontSize
                                   placeHodler:(NSString *)placeHodler
-                                returnKeyType:(UIReturnKeyType)returnKeyType
+                                       ifViewRadius:(BOOL)radius
 {
     UITextField *textField = [[UITextField alloc] init];
+    textField.backgroundColor = [UIColor whiteColor];
+
     [textField setFont:[UIFont systemFontOfSize:fontSize]];
     [textField setTextColor:textColor];
-    [textField setPlaceholder:placeHodler];
-    [textField setReturnKeyType:returnKeyType];             //设置返回键样式
-    textField.textAlignment = NSTextAlignmentLeft;          //左对齐
-    textField.borderStyle = UITextBorderStyleRoundedRect;   //textfield带边框
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;  //设置输入框清除按钮  只在编辑是出现
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, textField.frame.size.height)];
+    textField.leftView = leftView;
+    [textField setReturnKeyType:UIReturnKeyDone];                   //设置返回键样式  ->完成
+    textField.leftViewMode = UITextFieldViewModeAlways;
+
+    textField.textAlignment = NSTextAlignmentLeft;                  //左对齐
+    textField.borderStyle = UITextBorderStyleRoundedRect;           //textfield带边框
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;    //设置输入框清除按钮  只在编辑是出现
+    NSAttributedString *testTextString = [[NSAttributedString alloc] initWithString:placeHodler attributes:nil];
+    [textField setAttributedPlaceholder:testTextString];
+    if (radius){
+        BorderRadius(textField, 2, 1, RGBACOLOR(218, 218, 218,1));
+    }
     //textField.secureTextEntry = YES;  //设置安全密码 输入保护 ********
+
+    return textField;
+}
+/**
+ UITextField  LeftLabelView
+ */
++ (UITextField *)creatTextFieldWithLableLefttextColor:(UIColor *)textColor
+                                         textFontSize:(CGFloat)fontSize
+                                          placeHodler:(NSString *)placeHodler
+                                         ifViewRadius:(BOOL)radius
+                                       leftLabelTitle:(NSString *)labelTitle
+                                       leftLabelColor:(UIColor *)labelColor{
+    
+    UITextField *textField = [[UITextField alloc] init];
+    textField.backgroundColor = [UIColor whiteColor];
+    
+    
+    UILabel *label = [JQFactory createLabelWithColor:labelColor fontSize:fontSize alignment:NSTextAlignmentLeft];
+    label.text = labelTitle;
+    /**
+     设置leftLabel
+     */
+    CGSize size = [label sizeThatFits:CGSizeMake(MAXFLOAT, textField.frame.size.height)];
+    label.frame = CGRectMake(0, 0, size.width,textField.frame.size.height);
+    textField.leftView = label;
+
+    [textField setFont:[UIFont systemFontOfSize:fontSize]];
+    [textField setTextColor:textColor];
+    [textField setReturnKeyType:UIReturnKeyDone];                   //设置返回键样式  ->完成
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    textField.textAlignment = NSTextAlignmentLeft;                  //左对齐
+    textField.borderStyle = UITextBorderStyleRoundedRect;           //textfield带边框
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;    //设置输入框清除按钮  只在编辑是出现
+    NSAttributedString *testTextString = [[NSAttributedString alloc] initWithString:placeHodler attributes:nil];
+    [textField setAttributedPlaceholder:testTextString];
+    if (radius){
+        BorderRadius(textField, 2, 1, RGBACOLOR(218, 218, 218,1));
+    }
+    
     return textField;
 }
 
@@ -136,8 +184,8 @@
  -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
  [_textField resignFirstResponder];
  }
- 
  */
+
 
 
 #pragma mark - make textView
