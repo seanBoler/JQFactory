@@ -332,7 +332,7 @@
     }  
       
       
-  `获取当前时间  ->转成NSString 
+ ## 获取当前时间  ->转成NSString 
              /**
              获取当前时间  yyyymmdd
             */
@@ -348,6 +348,6 @@
                 return currentTimeString;
     
             }
-      `
+      
       
 # JQFactory
