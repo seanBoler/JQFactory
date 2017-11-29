@@ -54,10 +54,31 @@
 
 #pragma mark - make textField
 ///输入框
-+ (UITextField *)createTextFieldWithtextColor:(UIColor *)textColor
-                                 textFontSize:(CGFloat)fontSize
-                                  placeHodler:(NSString *)placeHodler
-                                returnKeyType:(UIReturnKeyType)returnKeyType;
+/**
+ UITextField
+ radius  是否带边框
+ 默认提示
+ 字体颜色
+ 字体大小
+ */
++(UITextField *)creatTextFieldWithLeftViewtextColor:(UIColor *)textColor
+                                       textFontSize:(CGFloat)fontSize
+                                        placeHodler:(NSString *)placeHodler
+                                       ifViewRadius:(BOOL)radius;
+
+/**
+ UITextField
+ 1、radius  是否带边框 2、默认提示 3、字体颜色 4、字体大小
+ LeftLabel
+ 1、提示。2、颜色
+ */
++ (UITextField *)creatTextFieldWithLableLefttextColor:(UIColor *)textColor
+                                         textFontSize:(CGFloat)fontSize
+                                          placeHodler:(NSString *)placeHodler
+                                         ifViewRadius:(BOOL)radius
+                                       leftLabelTitle:(NSString *)labelTitle
+                                       leftLabelColor:(UIColor *)labelColor;
+  
 
 #pragma mark - make textView
 + (UITextView *)createTextViewWithTextColor:(UIColor *)textColor
@@ -99,5 +120,14 @@
                                 style:(UITableViewStyle)style
                   cellReuseIdentifier:(NSString *)cellIdentifier
                         registerClass:(nullable Class)registerClass;
+
+
+/**
+ 获取当前时间。YYYY-MM-DD
+ */
+ 
++ (NSString*)getCurrentTimes;
+
+
 
 @end
