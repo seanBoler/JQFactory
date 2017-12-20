@@ -42,15 +42,13 @@
 + (UILabel *)createLabelWithColor:(UIColor *)textColor
                          fontSize:(CGFloat)fontSize
                         alignment:(NSTextAlignment)alignment
-                    numberOfLines:(int)numberOfLines;
+;
 ///带边框
 + (UILabel *)createLabelWithColor:(UIColor *)textColor
                          fontSize:(CGFloat)fontSize
                         alignment:(NSTextAlignment)alignment
-                    numberOfLines:(int)numberOfLines
                       borderWidth:(int)borderWidth
                       borderColor:(UIColor *)borderColor;
-
 
 #pragma mark - make textField
 ///输入框
@@ -78,14 +76,12 @@
                                          ifViewRadius:(BOOL)radius
                                        leftLabelTitle:(NSString *)labelTitle
                                        leftLabelColor:(UIColor *)labelColor;
-  
-
+    
 #pragma mark - make textView
 + (UITextView *)createTextViewWithTextColor:(UIColor *)textColor
                                textFontSize:(CGFloat)fontSize
                                    editable:(BOOL)editable
                               textAlignment:(NSInteger)textAlignment;
-
 
 #pragma mark - make imageView
 ///imageView 图片
@@ -111,7 +107,7 @@
 ///barButtonItem  image action
 + (UIBarButtonItem *)createButtonItemWithTarget:(id)target
                                              action:(SEL)aSelector
-                                              image:(UIImage *)image;
+                                              image:(NSString *)image;
 
 #pragma mark - tableView
 ///tableView clsaa and style
@@ -121,13 +117,44 @@
                   cellReuseIdentifier:(NSString *)cellIdentifier
                         registerClass:(nullable Class)registerClass;
 
+#pragma mark -  提示框 UIAlertController
+///提示框 UIAlertController
++ (UIAlertController *)createAlertControllerWithTitle:(NSString *)title
+                                              message:(NSString *)message
+                                          alertAction:(NSArray *)alertAction
+                                               target:(id)target;
+
++ (void)alertViewControllerWithTarget:(id)target message:(NSString *)message actionBlock:(void (^)(UIAlertAction * _Nonnull action))actionHander;
+
++ (void)alerviewwithTarget:(id)target message:(NSString *)message;
 
 /**
  获取当前时间。YYYY-MM-DD
  */
- 
-+ (NSString*)getCurrentTimes;
++ (NSString *)getCurrentTimes;
 
 
+/**
+ token 适用的转码
+ */
++ (NSString *)stringWithtag:(NSString *)tag  parameter:(NSString *)parameter;
+
+/**
+ urlEncode
+ */
++(NSString *)getUrlStringFromString:(NSString *)urlStr;
+
+/**
+ 生成Guid
+ */
++ (NSString*)stringWithUUID;
+
+
+/**
+ 时间戳 相减UTC
+ */
++ (NSInteger)getNowTimestamp;
++ (NSInteger)timeSwitchTimestamp:(NSString *)formatTime;
++(NSInteger )timeandDate:(NSString *)endDate;
 
 @end
