@@ -3,7 +3,7 @@ JQFactory
 JQFactory.h
 
 JQFactory.m
-
+快速简洁创建控件UI （带边框控件，极简初始化常用控件init 颜色、字体、边框、样式、frame等）
 - 初始化创建控件
 - 控件常用属性 
       1. `UIView`
@@ -16,6 +16,7 @@ JQFactory.m
       8. `UITableView` 
       9. `UIImageView`
       10.`NSDateFormatter`
+
 
 不带边框view
 
